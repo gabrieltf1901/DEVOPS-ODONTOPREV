@@ -18,7 +18,7 @@ Esta solução integra práticas de DevOps para automação de integração, ent
 ## Diagrama de Arquitetura (Mermaid)
 ```mermaid
 flowchart TD
-    A[Repositório GitHub/Azure Repos] -> B[CI Pipeline (Build & Test)]
+    A[Repositório GitHub/Azure Repos] B[CI Pipeline (Build & Test)]
     B --> C[Docker Build e Testes Automatizados]
     C --> D[Push para ACR]
     D --> E[CD Pipeline (Deploy Automático)]
