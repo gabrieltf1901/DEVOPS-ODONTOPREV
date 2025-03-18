@@ -16,7 +16,7 @@ Esta solução integra práticas de DevOps para automação de integração, ent
 4. **Monitoramento:** Logs e métricas são coletados para feedback e ajustes contínuos.
 
 ## Diagrama de Arquitetura (Mermaid)
-
+```bash
 flowchart TD
     A[Repositório GitHub/Azure Repos] B[CI Pipeline (Build & Test)]
     B --> C[Docker Build e Testes Automatizados]
@@ -24,4 +24,4 @@ flowchart TD
     D --> E[CD Pipeline (Deploy Automático)]
     E --> F[ACI]
     F --> G[Azure Monitor & Log Analytics]
-
+```
