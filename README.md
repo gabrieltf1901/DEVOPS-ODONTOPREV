@@ -47,9 +47,9 @@ Esta solução integra práticas de DevOps para automação de integração, ent
 
 12. az acr credential show --name sprint3
 
-13. docker login sprint3.azurecr.io --username sprint3 --password <senha>
+13. docker login sprint3.azurecr.io --username sprint3 --password 'senha'
 
-14. az container create --resource-group sprint3 --name sprint3 --image sprint3.azurecr.io/odontoprev:latest --registry-login-server sprint3.azurecr.io --registry-username sprint3 --registry-password <senha> --dns-name-label odontoprev-aci-unique --ports 80 --os-type Linux --cpu 1 --memory 1.5
+14. az container create --resource-group sprint3 --name sprint3 --image sprint3.azurecr.io/odontoprev:latest --registry-login-server sprint3.azurecr.io --registry-username sprint3 --registry-password 'senha' --dns-name-label odontoprev-aci-unique --ports 80 --os-type Linux --cpu 1 --memory 1.5
 
 15. az container logs --resource-group sprint3 --name sprint3
 
