@@ -40,18 +40,29 @@ Esta solução integra práticas de DevOps para automação de integração, ent
 8. az acr login --name sprint3
 
 9. docker tag odontoprev:latest sprint3.azurecr.io/odontoprev:latest
-   docker push sprint3.azurecr.io/odontoprev:latest
+   
+10. docker push sprint3.azurecr.io/odontoprev:latest
 
-10. az acr update -n sprint3 --admin-enabled true
+11. az acr update -n sprint3 --admin-enabled true
 
-11. az acr credential show --name sprint3
+12. az acr credential show --name sprint3
 
-12. docker login sprint3.azurecr.io --username sprint3 --password 0VQHpF7CLDrCxKn4OBsA/uW8TaJfZxJbTHe7F+vXSj+ACRBXEmvp
+13. docker login sprint3.azurecr.io --username sprint3 --password 0VQHpF7CLDrCxKn4OBsA/uW8TaJfZxJbTHe7F+vXSj+ACRBXEmvp
 
 
-13. az container create --resource-group sprint3 --name sprint3 --image sprint3.azurecr.io/odontoprev:latest --registry-login-server sprint3.azurecr.io --registry-username sprint3 --registry-password 0VQHpF7CLDrCxKn4OBsA/uW8TaJfZxJbTHe7F+vXSj+ACRBXEmvp --dns-name-label odontoprev-aci-unique --ports 80 --os-type Linux --cpu 1 --memory 1.5
+14. az container create --resource-group sprint3 --name sprint3 --image sprint3.azurecr.io/odontoprev:latest --registry-login-server sprint3.azurecr.io --registry-username sprint3 --registry-password 0VQHpF7CLDrCxKn4OBsA/uW8TaJfZxJbTHe7F+vXSj+ACRBXEmvp --dns-name-label odontoprev-aci-unique --ports 80 --os-type Linux --cpu 1 --memory 1.5
 
-14. az container logs --resource-group sprint3 --name sprint3
+15. az container logs --resource-group sprint3 --name sprint3
+
+
+### Remoção
+
+1. az acr repository delete --name sprint3 --repository odontoprev --yes
+
+2. az group delete --name sprint3 --yes --no-wait
+
+3. az container delete --resource-group sprint3 --name sprint3 --yes
+
 
 
 
